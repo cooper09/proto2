@@ -8,8 +8,11 @@
             <v-icon right></v-icon>
         </v-btn>
       </v-toolbar>
-      <v-navigation-drawer app v-model="drawer" class="indigo">
+      <v-navigation-drawer app v-model="drawer" class="primary">
           <p>Let's Roll</p>
+          <v-list>
+    
+          </v-list>
       </v-navigation-drawer>    
     </nav>
 </template>
@@ -22,6 +25,6 @@ export default {
     }//data
 }//end export 
 </script>
-<style>
+<style scope>
 
 </style>

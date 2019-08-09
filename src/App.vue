@@ -1,8 +1,7 @@
 <template>
   <v-app>
     <nav-bar></nav-bar>
-    <v-content>
-      Content
+    <v-content transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
   </v-app>
@@ -20,3 +19,6 @@ export default {
   }),
 };
 </script>
+<style>
+
+</style>
