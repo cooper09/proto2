@@ -17,6 +17,10 @@ export default {
   data: () => ({
     //
   }),
+      created() {
+        this.$store.dispatch('getCampaigns');
+        this.$store.dispatch('getConversions');
+    } //end created
 };
 </script>
 <style>
