@@ -2,7 +2,9 @@
     <nav>
       <v-toolbar flat dark class="blue">
         <v-icon class="hidden-md-and-up" @click="drawer=!drawer">menu</v-icon>
-        <v-toolbar-title>B+C Conversions</v-toolbar-title>
+                    <router-link to="/">
+                <v-toolbar-title data-cy="titleBtn">B+C Conversions</v-toolbar-title>
+            </router-link>
         <v-spacer></v-spacer>
         <v-btn color="black" to="/menu" data-cy="menuBtn" class="hidden-sm-and-down">
             <span>Menu</span>
@@ -46,5 +48,9 @@ export default {
 <style scope>
 .v-navigation-drawer {
     padding: 1em;
+}
+a .v-toolbar__title {
+    color: white;
+    text-decoration: none;
 }
 </style>
