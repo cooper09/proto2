@@ -1,8 +1,8 @@
 <template>
     <nav>
       <v-toolbar flat dark class="blue">
-        <v-icon class="hidden-md-and-up" @click="drawer=!drawer">menu</v-icon>
-                    <router-link to="/">
+        <v-icon class="hidden-md-and-up mr-5" @click="drawer=!drawer">menu</v-icon>
+            <router-link to="/">
                 <v-toolbar-title data-cy="titleBtn">B+C Conversions</v-toolbar-title>
             </router-link>
         <v-spacer></v-spacer>
@@ -13,12 +13,14 @@
 
       </v-toolbar>
       <v-navigation-drawer app v-model="drawer" class="blue accent-2" dark disable-resize-watcher>
-          <p>B+C</p>
+            <div class="mb-5">
+              <v-icon  class="mr-2">dashboard</v-icon><v-title class="white--text">B+C Conversions</v-title>
+            </div>
             <v-list>
-                <template v-for="(item, index) in items">
-                    <v-list-tile :key="index">
-                        <v-list-tile-action>
-                            <v-icon class="white--text">menu</v-icon>
+                <template v-for="(item, index) in items"  router :to="item.route">
+                    <v-list-tile :key="index" class="mb-2" >
+                        <v-list-tile-action >
+                            <v-icon class="white--text" >{{item.icon}}</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content>
                             {{item.title}}
@@ -36,10 +38,10 @@ export default {
         return {
             drawer: false,
             items: [
-                { title: 'Menu' },
-                { title: 'Profile' },
-                { title: 'Sign In' },
-                { title: 'Join' }
+                { title: 'Menu', icon: "menu", route: "/menu"},
+                { title: 'Profile', icon: "people", route: "/" },
+                { title: 'Sign In', icon: "verified_user", route: "/sign-in" },
+                { title: 'Join', icon: "open_in_new", route: "/join" }
             ]
         }
     }//data
