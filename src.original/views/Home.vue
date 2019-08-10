@@ -12,15 +12,11 @@ import HomeDetails from '@/components/HomeDetails';
 import HomePlans from '@/components/HomePlans';
 
 export default {
-    name: 'home',
-    components: {
+  name: 'home',
+  components: {
         HomeHero,
         HomeDetails,
         HomePlans
-    },
-    created() {
-        this.$store.dispatch('getCampaigns');
-        this.$store.dispatch('getConversions');
-    } //end created
+  },
 };
 </script>

@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import firebase from 'firebase/app';
 import router from '@/router';
 
 Vue.use(Vuex);
@@ -13,7 +12,7 @@ export default new Vuex.Store({
         campaignsUrl: 'https://sleepy-everglades-99189.herokuapp.com/sales',
         conversionsUrl:
             'https://sleepy-everglades-99189.herokuapp.com/conversions',
-        isAuthenticated: false,
+        isAuthenticated: true,
         userRecipes: [],
         campaigns: [],
         conversions: [],
@@ -73,7 +72,7 @@ export default new Vuex.Store({
             }
         },
         userLogin({ commit }, { email, password }) {
-            firebase
+          /*  firebase
                 .auth()
                 .signInWithEmailAndPassword(email, password)
                 .then(user => {
@@ -84,11 +83,11 @@ export default new Vuex.Store({
                 .catch(() => {
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
-                    router.push('/');
-                });
+                    router.push('/'); 
+                }); */
         },
         userJoin({ commit }, { email, password }) {
-            firebase
+          /*  firebase
                 .auth()
                 .createUserWithEmailAndPassword(email, password)
                 .then(user => {
@@ -100,10 +99,10 @@ export default new Vuex.Store({
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
                     router.push('/');
-                });
+                }); */
         },
         userSignOut({ commit }) {
-            firebase
+          /*  firebase
                 .auth()
                 .signOut()
                 .then(() => {
@@ -115,25 +114,25 @@ export default new Vuex.Store({
                     commit('setUser', null);
                     commit('setIsAuthenticated', false);
                     router.push('/');
-                });
+                }); */
         },
         addRecipe({ state }, payload) {
-            firebase
+          /*  firebase
                 .database()
                 .ref('users')
                 .child(state.user.user.uid)
-                .push(payload.recipe.label);
+                .push(payload.recipe.label); */
         },
         getUserRecipes({ state, commit }) {
-            return firebase
+          /*  return firebase
                 .database()
                 .ref('users/' + state.user.user.uid)
                 .once('value', snapshot => {
                     commit('setUserRecipes', snapshot.val());
-                });
+                }); */
         }, //end getUserRecipes
         async getCampaigns({ state, commit }) {
-            //alert("store - getCampaigns:  "+ plan )
+            //alert("store - getCampaigns:  " )
             try {
                 let response = await axios.get(`${state.campaignsUrl}`);
                 commit('setCampaigns', response.data);
@@ -143,7 +142,7 @@ export default new Vuex.Store({
             }
         },
         async getConversions({ state, commit }) {
-            //alert("store - getConversions:  "+ plan )
+            //alert("store - getConversions:  " )
             try {
                 let response = await axios.get(`${state.conversionsUrl}`);
                 commit('setConversions', response.data);
