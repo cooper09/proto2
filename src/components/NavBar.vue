@@ -4,10 +4,11 @@
         <v-icon class="hidden-md-and-up" @click="drawer=!drawer">menu</v-icon>
         <v-toolbar-title>B+C Conversions</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn color="black" @click="drawer=!drawer" class="hidden-sm-and-down">
+        <v-btn color="black" to="/menu" data-cy="menuBtn" class="hidden-sm-and-down">
             <span>Menu</span>
             <v-icon right></v-icon>
         </v-btn>
+
       </v-toolbar>
       <v-navigation-drawer app v-model="drawer" class="blue accent-2" dark disable-resize-watcher>
           <p>B+C</p>
