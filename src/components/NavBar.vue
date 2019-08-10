@@ -1,10 +1,10 @@
 <template>
     <nav>
       <v-toolbar flat dark class="blue">
-        <v-icon>menu</v-icon>
+        <v-icon class="hidden-md-and-up" @click="drawer=!drawer">menu</v-icon>
         <v-toolbar-title>B+C Conversions</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn color="black" @click="drawer=!drawer">
+        <v-btn color="black" @click="drawer=!drawer" class="hidden-sm-and-down">
             <span>Menu</span>
             <v-icon right></v-icon>
         </v-btn>
