@@ -5,6 +5,8 @@
                 <v-card class="elevation-12">
                     <v-toolbar dark color="primary">
                         <v-toolbar-title>Join Form</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                            <v-btn fab class="transparent" to="/">X</v-btn>
                     </v-toolbar>
                     <v-card-text>
                         <v-form ref="form" v-model="valid" lazy-validation>

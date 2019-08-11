@@ -5,6 +5,8 @@
                 <v-card class="elevation-12">
                     <v-toolbar dark color="primary">
                         <v-toolbar-title>Login Form</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                            <v-btn fab class="transparent" to="/">X</v-btn>
                     </v-toolbar>
                     <v-card-text>
                         <v-form ref="form" v-model="valid" >
@@ -61,4 +63,9 @@ export default {
 </script>
 
 <style scoped>
+.transparent {
+    background: transparent;
+    width: 3em;
+    height: 3em;
+}
 </style>
