@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         date() {
-            //return this.$store.state.date;
+            return this.$store.state.date;
         }//end date
     },//end compute
     methods: {
