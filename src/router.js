@@ -33,6 +33,23 @@ export default new Router({
         path: '/join',
         name: 'join',
         component: () => import('./views/Join.vue')
+    },
+    {
+        path: '/boucher',
+        name: 'boucher',
+        component: () => import('./views/BoucherReport.vue')
+    },
+    {
+        path: '/facebook',
+        name: 'facebook',
+        component: () => import('./views/FacebookReport.vue')
+    },
+    {
+        path: '/google',
+        name: 'google',
+        component: () => import('./views/GoogleReport.vue')
     }
+    
+
   ]//end  routes
 })

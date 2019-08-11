@@ -19,6 +19,7 @@ export default new Vuex.Store({
         b_confirmed: 0,
         f_confirmed: 0,
         g_confirmed: 0,
+        // determine which conversion window is open
         startdate: new Date(),
         enddate: new Date()
     },
@@ -169,6 +170,10 @@ export default new Vuex.Store({
         },
         ourConversions(state) {
             return state.conversions;
+        },
+        getFacebookConversions(state) {
+            var facebookArr = state.conversions.splice(3)
+            return facebookArr;
         }
     }//end getters
 });

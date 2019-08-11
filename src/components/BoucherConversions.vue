@@ -30,6 +30,7 @@
 
 <script>
 import Confirmed from '@/components/Confirmed';
+
 export default {
     name: 'BoucherConversions',
     components: {

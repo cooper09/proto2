@@ -56,7 +56,7 @@
                     </v-card-text>
 
                     <v-card-actions v-if="['menu'].includes($route.name)">
-                        <v-btn outline block color="blue" @click="showConversions('facebook')" data-cy="plansPaleoBtn">
+                        <v-btn outline block color="blue" @click="checkConversions('facebook')" data-cy="plansPaleoBtn">
                             Facebook Conversions</v-btn>
                     </v-card-actions>
                 </v-card>
@@ -91,7 +91,6 @@
                     </v-card-actions>
                 </v-card>
             </v-flex>
-
         </v-layout>
     </v-container>
 </template>
@@ -130,23 +129,28 @@ export default {
         },
         checkConversions(plan) {
             // cooper s - when I want to update the store...
-            var campaigns = this.$store.getters.ourCampaigns;
-            var conversions = this.$store.getters.ourConversions;
+            //var campaigns = this.$store.getters.ourCampaigns;
+            //var conversions = this.$store.getters.ourConversions;
             //alert('Homeplan - Check Boucher Conversions: ' + campaigns);
             switch(plan) {
                 case 'boucher':
-                     alert("Homeplans - Show boucher conversions: "  )
-                    var conversions = boucherConversions.within7days(campaigns, conversions)
-                    this.$store.state.b_confirmed = conversions;
+                    this.$router.push('/boucher');
+                     //alert("Homeplans - Show boucher conversions: "  )
+                    //var conversions = boucherConversions.within7days(campaigns, conversions)
+                    //this.$store.state.b_confirmed = conversions;
+                  
+
                 break;
                 case 'facebook':
-                    alert("Homeplans - Show facebook conversions")
+                    this.$router.push('/facebook');
                 break;
                 case 'google':
+                    //cooper s - currently connects straight to google, need to figure out what to do with this later
                     //alert("Homeplans - Show google conversions")
-                    var startDate = "Tue Jul 23 2019 12:27:29 GMT-0400 (Eastern Daylight Time)"
-                    var conversions = googleConversions.googleData(startDate);
-                    this.$store.state.g_confirmed = conversions;
+                    //var startDate = "Tue Jul 23 2019 12:27:29 GMT-0400 (Eastern Daylight Time)"
+                    //var conversions = googleConversions.googleData(startDate);
+                    //this.$store.state.g_confirmed = conversions;
+                    this.$router.push('/google');
                 break;
             }//end switch
 

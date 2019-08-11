@@ -2,8 +2,8 @@
     <div>
         <home-plans></home-plans>
         <date-picker></date-picker> 
-        <boucher-conversions></boucher-conversions>
-        <google-conversions>Google</google-conversions>
+        <boucher-conversions v-if="open"></boucher-conversions>
+    <!--    <google-conversions>Google</google-conversions> -->
     </div>
 </template>
 
@@ -15,6 +15,11 @@ import GoogleConversions from '@/components/GoogleConversions';
 
 export default {
     name: 'Menu',
+    data () {
+        return {
+            open: false
+        }
+    }, 
     components: {
         HomePlans,
         DatePicker,

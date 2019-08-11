@@ -1,6 +1,7 @@
 <template>
 
     <v-container grid-list-lg>
+      <span class="right"><v-btn color="blue" dark to="/menu">Menu</v-btn></span>
         <h3>Facebook Conversions</h3>
         <div class="subheading">Conversions {{confirmed}}</div>
         <confirmed></confirmed>
@@ -38,7 +39,7 @@
 import Confirmed from '@/components/Confirmed';
 
 export default {
-    name: 'FacebookConversions',
+    name: 'FacebookReport',
     components: {
         Confirmed
     },
@@ -47,11 +48,14 @@ export default {
             return this.$store.state.recipes;
         },
         conversions() {
-            return this.$store.state.conversions;
+          //var facebookArr =  this.store.state.conversions;
+          //alert('facebookArr: ' + facebookArr )
+          //return this.$store.state.conversions;
+          return this.$store.getters.getFacebookConversions;
         },
         confirmed(){
             //return this.$store.state.b_confirmed;
-            return "5"
+            return "4"
         },
         startdate(){
             return this.$store.state.startdate;
@@ -78,4 +82,7 @@ export default {
 </script>
 
 <style scoped>
+.right {
+  float: right;
+}
 </style>

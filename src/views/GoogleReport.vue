@@ -1,7 +1,8 @@
 <template>
-
     <v-container grid-list-lg>
-        <h3>Facebook Conversions</h3>
+        <h3>Google Conversions</h3>
+        <v-spacer></v-spacer>
+        <span class="right"><v-btn color="blue" dark to="/menu">Menu</v-btn></span>
         <div class="subheading">Conversions {{confirmed}}</div>
         <confirmed></confirmed>
         <p></p>
@@ -38,7 +39,7 @@
 import Confirmed from '@/components/Confirmed';
 
 export default {
-    name: 'FacebookConversions',
+    name: 'BoucherConversions',
     components: {
         Confirmed
     },
@@ -51,7 +52,7 @@ export default {
         },
         confirmed(){
             //return this.$store.state.b_confirmed;
-            return "5"
+            return "3"
         },
         startdate(){
             return this.$store.state.startdate;
@@ -78,4 +79,8 @@ export default {
 </script>
 
 <style scoped>
+.right {
+    float:right;
+}
 </style>
+
