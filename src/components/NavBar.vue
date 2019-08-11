@@ -17,17 +17,27 @@
               <v-icon  class="mr-2">dashboard</v-icon><v-title class="white--text">B+C Conversions</v-title>
             </div>
             <v-list>
-                <template v-for="(item, index) in items"  router :to="item.route">
-                    <v-list-tile :key="index" class="mb-2" >
-                        <v-list-tile-action >
-                            <v-icon class="white--text" >{{item.icon}}</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content>
-                            {{item.title}}
-                        </v-list-tile-content>
-                    </v-list-tile>
-                    <v-divider :key="`divider-${index}`"></v-divider>
-                </template>
+                <div class="mb-2">
+                    <v-btn to="/menu" flat class="transparent" >
+                        <v-icon  class="mr-2" >menu</v-icon><v-title class="white--text text-center">Menu</v-title>
+                    </v-btn>
+                </div>
+                <div class="mb-2">
+                    <v-btn to="/" flat class="transparent" >
+                        <v-icon  class="mr-2" >people</v-icon><v-title class="white--text">Profile</v-title>
+                    </v-btn>
+                </div>
+                <div class="mb-2">
+                    <v-btn to="/sign-in" flat class="transparent" >
+                        <v-icon  class="mr-2" >verified_user</v-icon><v-title class="white--text">Sign In</v-title>
+                    </v-btn>
+                </div>
+                <div class="mb-2">
+                    <v-btn to="/join" flat class="transparent">
+                        <v-icon  class="mr-2" >open_in_new</v-icon><v-title class="white--text">Join</v-title>
+                    </v-btn>
+                </div>
+                
             </v-list>
       </v-navigation-drawer>    
     </nav>
@@ -54,5 +64,11 @@ export default {
 a .v-toolbar__title {
     color: white;
     text-decoration: none;
+}
+.transparent {
+    background: transparent;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
 }
 </style>
