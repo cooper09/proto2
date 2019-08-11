@@ -1,7 +1,7 @@
 <template>
 
     <v-container grid-list-lg>
-      <span class="right"><v-btn color="blue" dark to="/menu">Menu</v-btn></span>
+      <span class="right"><v-btn  class="hidden-md-and-up" color="blue" dark to="/menu">Menu</v-btn></span>
         <h3>Facebook Conversions</h3>
         <div class="subheading">Conversions {{confirmed}}</div>
         <confirmed></confirmed>

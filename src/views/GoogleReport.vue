@@ -2,7 +2,7 @@
     <v-container grid-list-lg>
         <h3>Google Conversions</h3>
         <v-spacer></v-spacer>
-        <span class="right"><v-btn color="blue" dark to="/menu">Menu</v-btn></span>
+        <span class="right"><v-btn class="hidden-md-and-up" color="blue" dark to="/menu">Menu</v-btn></span>
         <div class="subheading">Conversions {{confirmed}}</div>
         <confirmed></confirmed>
         <p></p>
@@ -39,7 +39,7 @@
 import Confirmed from '@/components/Confirmed';
 
 export default {
-    name: 'BoucherConversions',
+    name: 'GoogleReport',
     components: {
         Confirmed
     },
