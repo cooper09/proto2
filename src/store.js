@@ -171,9 +171,26 @@ export default new Vuex.Store({
         ourConversions(state) {
             return state.conversions;
         },
+        getBoucherConversions(state) {
+            return state.conversions;
+        },
+        
         getFacebookConversions(state) {
-            var facebookArr = state.conversions.splice(3)
+            var facebookArr = [];
+            facebookArr = state.conversions;
+            facebookArr.shift();
+            facebookArr.shift();
             return facebookArr;
+        },
+        getGoogleConversions(state) {
+            var googleArr = [];
+            googleArr = state.conversions;
+            googleArr.shift();
+            googleArr.shift();
+            googleArr.shift();
+            googleArr.shift();
+            //alert("Google Conversions: " + googleArr.length )
+            return googleArr;
         }
     }//end getters
 });

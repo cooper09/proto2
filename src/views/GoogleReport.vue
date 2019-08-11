@@ -48,7 +48,8 @@ export default {
             return this.$store.state.recipes;
         },
         conversions() {
-            return this.$store.state.conversions;
+            //return this.$store.state.conversions;
+            return this.$store.getters.getGoogleConversions;
         },
         confirmed(){
             //return this.$store.state.b_confirmed;
