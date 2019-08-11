@@ -40,6 +40,20 @@ import Confirmed from '@/components/Confirmed';
 
 export default {
     name: 'BoucherReport',
+    data () {
+      return {
+        conversiondata: 
+          [{product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: 'yesterday', conversion: true},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: '2 days ago', conversion: true},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: 'a week ago', conversion: true},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: 'a month ago', conversion: false},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: 'two years ago', conversion: false},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: '3 days ago', conversion: true},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: '3 weeks ago', conversion: false},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: '4 weeks ago', conversion: false},
+          {product: 'Vitamin C (Ascorbic Acid) 500mg ', category: "Invite Health", email: "horatioalgebra@gmail.com", timesstamp: 'today', conversion: true}];
+      }//end return 
+    },//end data
     components: {
         Confirmed
     },
@@ -66,12 +80,21 @@ export default {
     },
     methods: {
         orderRecipe(item) {
-            if (this.isAuthenticated) {
+          /*  if (this.isAuthenticated) {
                 this.$store.dispatch('addRecipe', item);
             } else {
                 this.$router.push('/sign-in');
-            }
-        }
+            } */
+
+
+          // Configuration
+          var config = {
+              trainingSet: conversiondata, 
+              categoryAttr: 'true'
+          };
+
+          var decisionTree = new dt.DecisionTree(config);
+        }// end recipes
     }, //end methods
     cleared() {
     }
