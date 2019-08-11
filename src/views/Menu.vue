@@ -2,8 +2,6 @@
     <div>
         <home-plans></home-plans>
         <date-picker></date-picker> 
-        <boucher-conversions v-if="open"></boucher-conversions>
-    <!--    <google-conversions>Google</google-conversions> -->
     </div>
 </template>
 
