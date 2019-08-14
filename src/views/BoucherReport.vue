@@ -4,7 +4,7 @@
       <span class="right"><v-btn class="hidden-md-and-up" color="blue" dark to="/menu">Menu</v-btn></span>
         <h3>Boucher Conversions</h3>
         <div class="subheading">Conversions {{confirmed}}</div>
-        <confirmed></confirmed>
+
         <p></p>
         <p></p>
         <v-layout row wrap>
@@ -36,12 +36,12 @@
 </template>
 
 <script>
-import Confirmed from '@/components/Confirmed';
+import DecisionTree from '@/components/DecisionTree';
 
 export default {
     name: 'BoucherReport',
     components: {
-        Confirmed
+        DecisionTree
     },
     computed: {
         recipes() {

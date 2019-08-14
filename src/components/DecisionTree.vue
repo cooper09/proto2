@@ -10,7 +10,7 @@ import DecisionTree from "decision-tree";
 import makeaDecision from '@/helpers/makeaDecision'
 
 export default {
-    name: 'Confirmed',
+    name: 'DecisionTree',
     components: {
         DecisionTree
     },
@@ -33,9 +33,9 @@ export default {
         }
     },//data
     computed: {
-        conversions() {
-            return this.$store.state.conversions;
-        },
+    //    conversions() {
+    //        return this.$store.state.conversions;
+    //    },
     },
     methods: {
         decisionTreeConversions() {

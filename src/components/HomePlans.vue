@@ -97,8 +97,7 @@
 
 <script>
 // cooper s - external "helper" files will handle modular transactions and goodies
-import boucherConversions from '@/helpers/boucherConversions'
-import googleConversions from '@/helpers/googleConversions'
+import makeaDecision from '@/helpers/makeaDecision';
 
 export default {
     name: 'HomePlans',
@@ -128,16 +127,13 @@ export default {
             //alert('Show Boucher Conversions: ' + plan);
         },
         checkConversions(plan) {
-            // cooper s - when I want to update the store...
-            //var campaigns = this.$store.getters.ourCampaigns;
-            //var conversions = this.$store.getters.ourConversions;
-            //alert('Homeplan - Check Boucher Conversions: ' + campaigns);
             switch(plan) {
                 case 'boucher':
+                    alert("Boucher Away: "+ this.$store.state.conversions);
                     this.$router.push('/boucher');
-                     //alert("Homeplans - Show boucher conversions: "  )
-                    //var conversions = boucherConversions.within7days(campaigns, conversions)
-                    //this.$store.state.b_confirmed = conversions;
+                    var conversions = makeaDecision.doYourThing( this.$store.state.conversions );  
+                    alert("Confirmed-decisionTreeConversions: " + conversions );
+                    console.log("Confirmed - conversion: ",  conversions )
                   
 
                 break;

@@ -8,8 +8,8 @@
 <script>
 import HomePlans from '@/components/HomePlans';
 import DatePicker from '@/components/DatePicker';
-import BoucherConversions from '@/components/BoucherConversions';
-import GoogleConversions from '@/components/GoogleConversions';
+import GoogleReport from './GoogleReport';
+import BoucherReport from './BoucherReport';
 
 export default {
     name: 'Menu',
@@ -21,8 +21,9 @@ export default {
     components: {
         HomePlans,
         DatePicker,
-        BoucherConversions,
-        GoogleConversions
+        //BoucherConversions,
+        //BoucherReport,
+        //GoogleConversions
     },
     computed:{
 
