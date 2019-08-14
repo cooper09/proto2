@@ -1,6 +1,9 @@
 # proto2
 
 ## Project setup
+
+install tensorflow
+sudo npm install --save @tensorflow/tfjs
 ```
 npm install
 ```
