@@ -12,14 +12,15 @@ var makeaDecision = {
 
       var config = {
         trainingSet: data, 
-        categoryAttr: 'conversion'
+        categoryAttr: 'Total_Conversion',
+        ignoredAttributes: ['ad_id']
     };
     // Building Decision Tree
     var decisionTree = new dt.DecisionTree(config);
     //console.log("decisionTree: ", decisionTree );
     
   // Building Random Forest
-  var numberOfTrees = 6;
+  var numberOfTrees = 3;
   var randomForest = new dt.RandomForest(config, numberOfTrees);
       
   conversions.forEach(conversion =>  {

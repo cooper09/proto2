@@ -131,7 +131,11 @@ export default {
                 case 'boucher':
                     //alert("Boucher Away: "+ this.$store.state.conversions);
                     this.$router.push('/boucher');
-                    var conversions = makeaDecision.doYourThing( this.$store.state.conversions );  
+                    //cooper s - artificial conversions
+                    var test = [
+                        { ad_id: "112164", xyz_campaignid: "1178", fb_campaignid: "144545", age: "25", gender: "M", interest: "80", impressions: "570699", clicks: "9",spent: "138.77" }
+                    ]
+                    var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );  
                     alert("Confirmed-decisionTreeConversions: " + conversions );
                     console.log("Confirmed - conversion: ",  conversions )
                   
