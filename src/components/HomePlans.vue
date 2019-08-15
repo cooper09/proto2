@@ -129,7 +129,7 @@ export default {
         checkConversions(plan) {
             switch(plan) {
                 case 'boucher':
-                    alert("Boucher Away: "+ this.$store.state.conversions);
+                    //alert("Boucher Away: "+ this.$store.state.conversions);
                     this.$router.push('/boucher');
                     var conversions = makeaDecision.doYourThing( this.$store.state.conversions );  
                     alert("Confirmed-decisionTreeConversions: " + conversions );
