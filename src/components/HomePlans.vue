@@ -135,9 +135,28 @@ export default {
                     var test = [
                         { ad_id: "112164", xyz_campaignid: "1178", fb_campaignid: "144545", age: "25", gender: "M", interest: "80", impressions: "570699", clicks: "9",spent: "138.77" }
                     ]
-                    var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );  
-                    alert("Confirmed-decisionTreeConversions: " + conversions );
-                    console.log("Confirmed - conversion: ",  conversions )
+
+                    let p = new Promise((resove, reject )=> {
+                    let conversions;
+
+                        //var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );
+                        if (conversions = makeaDecision.doYourThing( test )){  
+                            alert("Confirmed-decisionTreeConversions: " + conversions );
+                            resolve("Success")
+                        } else {
+                            reject("Failed")
+                        }
+
+                        p.then(()=>{
+                            alert("yumpin yimminy")
+                        }).catch( err =>{
+                            alert("We broke our promise: ", err )
+                        }) 
+                    })//end promise
+
+                   // var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );  
+                    //alert("Confirmed-decisionTreeConversions: " + conversions );
+                    //console.log("Confirmed - conversion: ",  conversions );
                   
 
                 break;

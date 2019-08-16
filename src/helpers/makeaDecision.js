@@ -1,41 +1,52 @@
 var makeaDecision = {
   //cooper s - within7dys is the "Boucher" check
   doYourThing(conversions) {
- alert("Run a decision tree: " + conversions);
+ alert("Run a decision tree: " + conversions[0]);
+ console.log("makeaDecision - test data passed: ", conversions[0] );
     //cooper s - loop through our conversions to see if we can find a matching date
     
-    const datafile = '../data/September.csv';
+    const datafile = '../data/FB_KAG_conversion_data.csv';
     var finalArr = [];
 
-    d3.csv(datafile, function(data){
-      alert("Data loaded: " + data );
+    console.log("Open data file: ", datafile)
 
-      var config = {
+    d3.csv(datafile,  function(data){
+      alert("Data loaded, buddy: " + data );
+      console.log("Data loaded: ", data );
+
+    /*  var config = {
         trainingSet: data, 
         categoryAttr: 'Total_Conversion',
         ignoredAttributes: ['ad_id']
     };
-    // Building Decision Tree
-    var decisionTree = new dt.DecisionTree(config);
-    //console.log("decisionTree: ", decisionTree );
+
+  // Building Decision Tree
+  var decisionTree = new dt.DecisionTree(config);
+  console.log("decisionTree: ", decisionTree );
     
   // Building Random Forest
   var numberOfTrees = 3;
   var randomForest = new dt.RandomForest(config, numberOfTrees);
+
+  var decisionTreePrediction = decisionTree.predict(conversions[0]);
+  console.log("decisionTreePrediction: ",  decisionTreePrediction );
       
   conversions.forEach(conversion =>  {
-        var decisionTreePrediction = decisionTree.predict(conversion);
+      console.log("forEach: ", conversion );
+   
         var randomForestPrediction = randomForest.predict(conversion);
   
-        console.log("decisionTreePrediction: ",  decisionTreePrediction );
         console.log("randomForestPrediction: " , randomForestPrediction );
         
         if (randomForestPrediction.true === 3 ) {  
           finalArr.push(conversion)
         }
       })//end foreach
+      */
+      finalArr=["x","y","z"];
+        
       console.log("Load Data: ", finalArr );
-      return finalArr;
+      return finalArr;  
 
     });//end csv
 
