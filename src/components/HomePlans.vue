@@ -149,7 +149,7 @@ export default {
 
                         p.then(()=>{
                             alert("yumpin yimminy")
-                        }).catch( err =>{
+                        }).catch( (err) =>{
                             alert("We broke our promise: ", err )
                         }) 
                     })//end promise
