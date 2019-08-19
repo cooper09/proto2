@@ -1,15 +1,15 @@
 <template>
     <span>
-        Find Conversions
-        <v-btn @click="decisionTreeConversions">Calculate Conversions</v-btn>
-        <vue-csv-import v-model="csv" :map-fields="['name', 'age']">CSV</vue-csv-import>
-        <p></p>
+        Select Training Data:
                 <div class="form-group csv-import-file">
                     <input ref="csv" type="file" @change.prevent="validFileMimeType" :class="inputClass" name="csv">
                     <slot name="error" v-if="showErrorMessage && !isValidFileMimeType">
                         File type is invalid
                     </slot>
                 </div>
+             <p></p>
+        <v-btn @click="decisionTreeConversions">Calculate Conversions</v-btn>
+
                     <tbody>
                         <tr v-for="(field, key) in fieldsToMap" :key="key">
                             <td>{{ field.label }}</td>
@@ -20,6 +20,9 @@
                             </td>
                         </tr>
                     </tbody>
+                    <p></p>
+                    <hr />
+                    <vue-csv-import v-model="csv" :map-fields="['name', 'age']"></vue-csv-import>
      </span>
      
 </template>
@@ -149,6 +152,22 @@ export default {
                     reader.onload = function (evt) {
                         alert("Result: " + evt.target.result );
                         callback(evt.target.result);
+                        var test = [
+                            { 
+                                ad_id: "112164", 
+                                xyz_campaignid: "1178", 
+                                fb_campaignid: "144545", 
+                                age: "25", 
+                                gender: "M", 
+                                interest: "80", 
+                                impressions: "570699", 
+                                Clicks: "9",
+                                Spent: "138.77",
+                                Total_Conversion: "2",
+                                Approved_Conversion: "1"
+                            }
+                        ]
+                        var conversions = makeaDecision.doYourThing(test, evt.target.result);
                     };
                     reader.onerror = function () {
                     };
