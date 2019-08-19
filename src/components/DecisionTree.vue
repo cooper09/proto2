@@ -114,9 +114,10 @@ export default {
                 { category: "Invitehealth", source: "http://m.facebook.com/", product: "Vitamin C (Ascorbic Acid) 500mg", campaign: "boucher,invite_traffic", facebook_pixel:"1276657915751386", ga_goal: "Invitehealth Facebook Ad - Event Pixel", landing_page: "https://www.invitehealth.com/beets-hx/superfoods/?utm_source=Facebook", hash: "17483525", click_timestamp: "Tue Jul 23 2019 12:27:29 GMT-0400 (Eastern Daylight Time)", conversion_timestamp: "Tue Jul 30 2019 14:54:43 GMT-0400 (Eastern Daylight Time)", conversion: "true"},
                 { category: "Invitehealth", source: "http://m.facebook.com/", product: "Vitamin C (Ascorbic Acid) 500mg", campaign: "boucher,invite_traffic", facebook_pixel:"1276657915751386", ga_goal: "Invitehealth Facebook Ad - Event Pixel", landing_page: "https://www.invitehealth.com/beets-hx/superfoods/?utm_source=Facebook", hash: "17483525", click_timestamp: "Tue Jul 23 2019 12:27:29 GMT-0400 (Eastern Daylight Time)", conversion_timestamp: "Sum Jul 07 2019 14:54:43 GMT-0400 (Eastern Daylight Time)", conversion: "false"},
             ],
-            csv: "./csv-sample.csv",
+            csv: null,
             fieldsToMap: [],
             map: {},
+            isValidFileMimeType: false,
             hasHeaders: true
         }//end return
     },//data
@@ -179,6 +180,16 @@ export default {
 
                     return newRow;
                 });
+            }, 
+           validFileMimeType() {
+                let file = this.$refs.csv.files[0];
+                if (file) {
+                    this.isValidFileMimeType = (this.fileMimeTypes.indexOf(file.type) > -1);
+                    this.fileSelected = true;
+                } else {
+                    this.isValidFileMimeType = false;
+                    this.fileSelected = false;
+                }
             },
     }, //end methods
     created() {
