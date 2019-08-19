@@ -129,14 +129,13 @@ export default {
         checkConversions(plan) {
             switch(plan) {
                 case 'boucher':
-                    //alert("Boucher Away: "+ this.$store.state.conversions);
+                    alert("Boucher Away: "+ this.$store.state.conversions);
                     this.$router.push('/boucher');
                     //cooper s - artificial conversions
                     var test = [
                         { ad_id: "112164", xyz_campaignid: "1178", fb_campaignid: "144545", age: "25", gender: "M", interest: "80", impressions: "570699", clicks: "9",spent: "138.77" }
                     ]
-
-                    let p = new Promise((resove, reject )=> {
+/* let p = new Promise((resove, reject )=> {
                     let conversions;
 
                         //var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );
@@ -152,10 +151,10 @@ export default {
                         }).catch( (err) =>{
                             alert("We broke our promise: ", err )
                         }) 
-                    })//end promise
+                    })//end promise */
 
                    // var conversions = makeaDecision.doYourThing( test );//this.$store.state.conversions );  
-                    //alert("Confirmed-decisionTreeConversions: " + conversions );
+                   // alert("Confirmed-decisionTreeConversions: " + conversions );
                     //console.log("Confirmed - conversion: ",  conversions );
                   
 

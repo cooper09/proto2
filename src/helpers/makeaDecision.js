@@ -10,36 +10,16 @@ var makeaDecision = {
 
     console.log("Open data file: ", datafile);
 
-    d3.csv('http://localhost:8888/proto2/src/data/FB_KAG_conversion_data.csv',function(data) {
-      console.log(data[0]);
-      alert("data: " + data[0])
+    alert("Lets see if this works....")
+    d3.csv('./FB_KAG_conversion_data.csv',function(data) {
+      console.log("CSV data: ", data);
+      alert("CSV data: " + data)
     })
 
+
 /*/
-    d3.csv( datafile, function(d) {
-      return {
-        adid : d.adid,
-        age : d.age,
-        gener : d.gender,
-        interest : d.interest
-      };
-    }).then(function(data) {
-      console.log(data[0]);
-    });
+    
 
-// */
-
-
-/*
-    d3.csv(datafile,  function(data){
-      alert("Data loaded, buddy: " + data );
-      console.log("Data loaded: ", data );
-
-    /*  var config = {
-        trainingSet: data, 
-        categoryAttr: 'Total_Conversion',
-        ignoredAttributes: ['ad_id']
-    };
 
   // Building Decision Tree
   var decisionTree = new dt.DecisionTree(config);

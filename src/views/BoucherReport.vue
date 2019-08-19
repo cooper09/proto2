@@ -2,10 +2,11 @@
 
     <v-container grid-list-lg>
       <span class="right"><v-btn class="hidden-md-and-up" color="blue" dark to="/menu">Menu</v-btn></span>
-        <h3>Boucher Conversions</h3>
+        <h3>Boucher Conversions - Decision Tree</h3>
         <div class="subheading">Conversions {{confirmed}}</div>
 
         <p></p>
+        <decision-tree></decision-tree>
         <p></p>
         <v-layout row wrap>
             <v-flex xs12 sm6 md6 lg4 v-for="(conversion, idx) in conversions" :key="idx">

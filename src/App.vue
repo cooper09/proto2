@@ -8,11 +8,14 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar'
+import NavBar from '@/components/NavBar';
+//import FileReader from "FileReader";
+
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+  //  FileReader
   },
   data: () => ({
     //
