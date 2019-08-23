@@ -2,8 +2,9 @@
     <span>
         <v-menu  id="mydatepicker">
             <v-text-field :value="start" slot="activator" label="Start Date" prepend-icon="date_range" >Menu Field</v-text-field>
-            <v-date-picker v-model="start" v-on:change="onChange('start')"></v-date-picker>
+      <v-date-picker v-model="start" v-on:change="onChange('start')"></v-date-picker>  -->
         </v-menu>
+        <v-date-picker v-model="start" v-on:change="onChange('start')"></v-date-picker>
         <v-menu  id="mydatepicker">
             <v-text-field :value="end" slot="activator" label="End Date" prepend-icon="date_range" >Menu Field</v-text-field>
             <v-date-picker v-model="end" v-on:change="onChange('end')"></v-date-picker>
