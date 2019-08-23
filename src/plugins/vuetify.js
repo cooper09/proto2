@@ -1,5 +1,16 @@
+
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
+import 'vuetify/dist/vuetify.min.css';
+
+Vue.use(Vuetify, {
+    iconfont: 'md'
+});
+
+
+/*import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+import 'vuetify/dist/vuetify.min.css';
 
 Vue.use(Vuetify);
 
@@ -10,4 +21,4 @@ export default new Vuetify({
       primary: '#9652ff'
     }//theme
   },//icons
-});//end export
+});//end export */
