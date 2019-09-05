@@ -14,27 +14,27 @@
       </v-toolbar>
       <v-navigation-drawer app v-model="drawer" class="blue accent-2" dark disable-resize-watcher>
             <div class="mb-5">
-              <v-icon  class="mr-2">dashboard</v-icon><v-title class="white--text">B+C Conversions</v-title>
+              <v-icon  class="mr-2">dashboard</v-icon><v-card-title class="white--text">B+C Conversions</v-card-title>
             </div>
             <v-list>
                 <div class="mb-2">
-                    <v-btn to="/menu" flat class="transparent" >
-                        <v-icon  class="mr-2" >menu</v-icon><v-title class="white--text text-center">Menu</v-title>
+                    <v-btn to="/menu" class="transparent" >
+                        <v-icon  class="mr-2" >menu</v-icon><v-card-title class="white--text text-center">Menu</v-card-title>
                     </v-btn>
                 </div>
                 <div class="mb-2">
-                    <v-btn to="/" flat class="transparent" >
-                        <v-icon  class="mr-2" >people</v-icon><v-title class="white--text">Profile</v-title>
+                    <v-btn to="/"  class="transparent" >
+                        <v-icon  class="mr-2" >people</v-icon><v-card-title class="white--text">Profile</v-card-title>
                     </v-btn>
                 </div>
                 <div class="mb-2">
-                    <v-btn to="/sign-in" flat class="transparent" >
-                        <v-icon  class="mr-2" >verified_user</v-icon><v-title class="white--text">Sign In</v-title>
+                    <v-btn to="/sign-in" class="transparent" >
+                        <v-icon  class="mr-2" >verified_user</v-icon><v-card-title class="white--text">Sign In</v-card-title>
                     </v-btn>
                 </div>
                 <div class="mb-2">
-                    <v-btn to="/join" flat class="transparent">
-                        <v-icon  class="mr-2" >open_in_new</v-icon><v-title class="white--text">Join</v-title>
+                    <v-btn to="/join" class="transparent">
+                        <v-icon  class="mr-2" >open_in_new</v-icon><v-card-title class="white--text">Join</v-card-title>
                     </v-btn>
                 </div>
                 

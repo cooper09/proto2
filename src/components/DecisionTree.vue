@@ -32,11 +32,13 @@ import DecisionTree from "decision-tree";
 import makeaDecision from '@/helpers/makeaDecision';
 import Papa from 'papaparse';
 import _ from 'lodash';
+import { VueCsvImport } from 'vue-csv-import';
 
 export default {
     name: 'DecisionTree',
     components: {
-        DecisionTree
+        DecisionTree,
+        VueCsvImport
     },
     props: {
          value: Array,
