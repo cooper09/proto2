@@ -28,7 +28,7 @@
                     </v-card-text>
                     <v-spacer></v-spacer>
                     <v-card-actions>
-                        <v-btn color="blue" dark @click="orderRecipe(item)">Chart</v-btn>
+                        <v-btn color="blue" dark @click="showChart(item)">Chart</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -66,13 +66,14 @@ export default {
         }
     },
     methods: {
-        orderRecipe(item) {
-            if (this.isAuthenticated) {
+        showChart(data) {
+            alert("Show Chart Analysis");
+          /*  if (this.isAuthenticated) {
                 this.$store.dispatch('addRecipe', item);
             } else {
                 this.$router.push('/sign-in');
-            }
-        }
+            } */
+        } 
     }, //end methods
     cleared() {
     }
