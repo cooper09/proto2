@@ -101,7 +101,7 @@ import makeaDecision from '@/helpers/makeaDecision';
 
 export default {
     name: 'HomePlans',
-   ccomputed: {
+   computed: {
         conversions() {
             return this.$store.state.conversions;
         },
