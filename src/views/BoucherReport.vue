@@ -68,6 +68,7 @@ export default {
     methods: {
         showChart(data) {
             alert("Show Chart Analysis");
+            this.$router.push('/chart');
           /*  if (this.isAuthenticated) {
                 this.$store.dispatch('addRecipe', item);
             } else {

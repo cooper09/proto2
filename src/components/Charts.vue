@@ -4,6 +4,8 @@
     </div>
 </template>
 <script>
+import  {Bar } from 'vue-chart.js';
+
 export default {
     data() {
         return {

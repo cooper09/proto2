@@ -48,6 +48,11 @@ export default new Router({
         path: '/google',
         name: 'google',
         component: () => import('./views/GoogleReport.vue')
+    },
+    {
+        path: '/chart',
+        name: 'chart',
+        component: () => import('./views/ChartView')
     }
     
 
