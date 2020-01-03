@@ -6,7 +6,7 @@
                 <v-toolbar-title data-cy="titleBtn">B+C Conversions</v-toolbar-title>
             </router-link>
         <v-spacer></v-spacer>
-        <v-btn color="black" to="/menu" data-cy="menuBtn" class="hidden-sm-and-down">
+        <v-btn color="black" to="/page1" data-cy="menuBtn" class="hidden-sm-and-down">
             <span>Menu</span>
             <v-icon right></v-icon>
         </v-btn>

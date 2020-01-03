@@ -9,7 +9,8 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      //component: Home
+      component: () => import('./views/Home.vue')
     },
     {
       path: '/about',
@@ -48,6 +49,22 @@ export default new Router({
         path: '/google',
         name: 'google',
         component: () => import('./views/GoogleReport.vue')
+    },
+    {
+        path: '/page2',
+        name: 'page2',
+        component: () => import('./views/Page2.vue')
+    },
+    {
+        path: '/page3',
+        name: 'page3',
+        component: () => import('./views/Page3.vue')
+    }
+    ,
+    {
+        path: '/page4',
+        name: 'page4',
+        component: () => import('./views/Page4.vue')
     }
     
 
