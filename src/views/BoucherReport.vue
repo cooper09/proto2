@@ -3,10 +3,10 @@
     <v-container grid-list-lg>
       <span class="right"><v-btn class="hidden-md-and-up" color="blue" dark to="/menu">Menu</v-btn></span>
         <h3>Boucher Conversions - Decision Tree</h3>
-        <div class="subheading">Conversions {{confirmed}}</div>
+        <div class="subheading">My Conversions {{confirmed}}</div>
 
         <p></p>
-        <decision-tree></decision-tree>
+        <decision-tree mapFields="id"></decision-tree>
         <p></p>
         <v-layout row wrap>
             <v-flex xs12 sm6 md6 lg4 v-for="(conversion, idx) in conversions" :key="idx">
@@ -28,7 +28,7 @@
                     </v-card-text>
                     <v-spacer></v-spacer>
                     <v-card-actions>
-                        <v-btn color="blue" dark @click="showChart(item)">Chart</v-btn>
+                        <v-btn color="blue" dark @click="showChart('chart')">Chart</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
@@ -45,9 +45,6 @@ export default {
         DecisionTree
     },
     computed: {
-        recipes() {
-            return this.$store.state.recipes;
-        },
         conversions() {
             return this.$store.state.conversions;
         },

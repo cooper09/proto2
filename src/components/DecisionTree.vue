@@ -22,7 +22,7 @@
                     </tbody>
                     <p></p>
                     <hr />
-                    <vue-csv-import v-model="csv" :map-fields="['name', 'age']"></vue-csv-import>
+                    <vue-csv-import v-model="csv" :map-fields="['id']"></vue-csv-import>
      </span>
      
 </template>

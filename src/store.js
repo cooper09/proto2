@@ -5,73 +5,37 @@ import router from '@/router';
 
 Vue.use(Vuex);
 
+import setCategories from './helpers/setCategories'
+
 export default new Vuex.Store({
     state: {
-        recipes: [],
-        apiUrl: 'https://api.edamam.com/search',
+//        apiUrl: 'https://api.edamam.com/search',
         campaignsUrl: 'https://sleepy-everglades-99189.herokuapp.com/sales',
         conversionsUrl:
             'https://sleepy-everglades-99189.herokuapp.com/conversions',
-        isAuthenticated: true,
-        userRecipes: [],
         campaigns: [],
         conversions: [],
-        b_confirmed: 0,
-        f_confirmed: 0,
-        g_confirmed: 0,
         // determine which conversion window is open
         startdate: new Date(),
         enddate: new Date()
     },
     mutations: {
-        setRecipes(state, payload) {
-            state.recipes = payload;
-        },
         setUser(state, payload) {
             state.user = payload;
         },
         setIsAuthenticated(state, payload) {
             state.isAuthenticated = payload;
         },
-        setUserRecipes(state, payload) {
-            state.userRecipes = payload;
-        },
         setCampaigns(state, payload) {
             //alert('store - setCampaigns: ' + payload);
             state.campaigns = payload;
-        }, //end set Campaigns
+        }, //end set Campaignsgit 
         setConversions(state, payload) {
             //alert('store - setConversions: ' + payload);
             state.conversions = payload;
         } //end set Campaigns
     },
     actions: {
-        async getRecipes({ state, commit }, plan) {
-            try {
-                let response = await axios.get(`${state.apiUrl}`, {
-                    params: {
-                        q: plan,
-                        app_id: '5b6623d5',
-                        app_key: '46674aa2193dbb7b88ffd897331e661a',
-                        from: 0,
-                        to: 9
-                    }
-                });
-                // sbdinc keys
-                // let response = await axios.get(`${state.apiUrl}`, {
-                //     params: {
-                //         q: plan,
-                //         app_id: '903de977',
-                //         app_key: '1b5fbf78de2db637b392f141c524222c\t',
-                //         from: 0,
-                //         to: 9
-                //     }
-                // });
-                commit('setRecipes', response.data.hits);
-            } catch (error) {
-                commit('setRecipes', []);
-            }
-        },
         userLogin({ commit }, { email, password }) {
           /*  firebase
                 .auth()
@@ -117,21 +81,6 @@ export default new Vuex.Store({
                     router.push('/');
                 }); */
         },
-        addRecipe({ state }, payload) {
-          /*  firebase
-                .database()
-                .ref('users')
-                .child(state.user.user.uid)
-                .push(payload.recipe.label); */
-        },
-        getUserRecipes({ state, commit }) {
-          /*  return firebase
-                .database()
-                .ref('users/' + state.user.user.uid)
-                .once('value', snapshot => {
-                    commit('setUserRecipes', snapshot.val());
-                }); */
-        }, //end getUserRecipes
         async getCampaigns({ state, commit }) {
             //alert("store - getCampaigns:  " )
             try {
@@ -191,6 +140,14 @@ export default new Vuex.Store({
             googleArr.shift();
             //alert("Google Conversions: " + googleArr.length )
             return googleArr;
-        }
+        },
+        getCategories(state) {
+
+            //var stinky = state.categories;
+            var stinky = state.campaigns;
+            stinky = stinky.slice(0);
+             console.log("I'm numb: " , state.campaigns );
+            return stinky
+        }//end getCategories
     }//end getters
 });

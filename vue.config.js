@@ -1,5 +1,5 @@
 // vue.config.js
 module.exports = {
-    baseUrl: "",
+    publicPath: "",
     outputDir: 'dist2', 
 };
