@@ -25,7 +25,8 @@ export default {
            this.$router.push('/campaign/'+id );
        },
        newCampaign() {
-           alert("Time to make the donuts...")
+        console.log("Create new campaign...");
+        this.$router.push('/newcampaign');
        }
    } //end methods
 }//end export 

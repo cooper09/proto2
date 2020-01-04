@@ -60,6 +60,11 @@ export default new Router({
       component: () => import( '@/views/AdminView.vue')
     },
     {
+        path: '/newcampaign',
+        name: 'newcampaign',
+        component: () => import( '@/views/NewCampaignView.vue')
+      },
+    {
       path: '/campaign/:id',
       name: 'campaign',
       params: true,

@@ -1,18 +1,18 @@
 <template>
   <div class="stinky">
-    <h1>This is the Reports view</h1>
+    <h1>This is the New Campaign view</h1>
     <Nav />
-    <Report id="02" />
+    <NewCampaign />
   </div>
 </template>
 <script>
 import Nav from '@/components/Nav'
-import Report from '@/components/Report'
+import NewCampaign from '@/components/NewCampaign'
 
 export default {
     components: {
-      Nav, 
-      Report
+      Nav,
+      NewCampaign
   },
 }//end export default
 </script>
