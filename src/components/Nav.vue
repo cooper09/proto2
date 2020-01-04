@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="rigntnav">
-      <router-link to="/main">Main</router-link> |
-      <router-link to="/">Log out</router-link>
+        <button @click='selectNav(5)'>Main</button> |
+        <button @click='selectNav(6)'>Log out</button>
     </div>
     <div class="leftnav">
     <!--  <router-link to="/users">Users/Agents</router-link><br/> -->
@@ -31,6 +31,12 @@ export default {
                case 4:
                 this.$router.push('/admin')  
                break;
+               case 5:
+                this.$router.push('/main')  
+               break;
+               case 6:
+                this.$router.push('/')  
+               break;
 
            }//end switch
        }//end selectNav
@@ -40,11 +46,15 @@ export default {
 </script>
 <style scoped>
     .rigntnav {
-        background: pink;
+        background: #ccc;
         float: right;
+        margin: 1em;
+        padding: 1em;
     }
     .leftnav {
-        background: aqua;
+        background: #ccc;
         float: left;
+        padding: 1em;
+        margin: 1em;
     }
 </style>
