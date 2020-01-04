@@ -9,8 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      //component: Home
-      component: () => import('./views/Home.vue')
+        component: Home
     },
     {
       path: '/about',
@@ -36,9 +35,9 @@ export default new Router({
         component: () => import('./views/Join.vue')
     },
     {
-        path: '/boucher',
-        name: 'boucher',
-        component: () => import('./views/BoucherReport.vue')
+        path: '/main',
+        name: 'main',
+        component: () => import( /* webpackChunkName: "main" */ '@/views/MainView.vue')
     },
     {
         path: '/facebook',

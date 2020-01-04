@@ -1,39 +1,29 @@
 <template>
-    <span>
-      <h2> This is the Home Page</h2>
-      <v-btn @click="nextPage(1)">Button 1</v-btn>
-      <v-btn @click="nextPage(2)">Button 2</v-btn>
-      <v-btn @click="nextPage(3)">Button 3</v-btn>
-      <v-btn @click="nextPage(4)">Button 4</v-btn>
-    </span>
+  <div class="home">
+    <img alt="Vue logo" src="../assets/b+c_logo.png">
+    <h3>Login</h3>
+    <input label="Username" value="Username" /><br/>
+    <input label="Password" value="Password"/>
+    <br/><br/>
+    <button @click="submit()">Login</button>
+    <button>Sign Up</button>
+  </div>
 </template>
 
 <script>
+// @ is an alias to /src
 
 
 export default {
   name: 'home',
   components: {
+
   },
   methods: {
-    nextPage(item) {
-          console.log("Goto page: ", item ); 
-          //this.$router.push('/page2')
-          switch(item){ 
-            case 1: 
-              //this.$router.push('/home')
-            break;
-            case 2: 
-              this.$router.push('/page2')
-            break;
-            case 3: 
-              this.$router.push('/page3')
-            break;
-            case 4: 
-              this.$router.push('/page4')
-            break;
-          }//end switch
-        }//end nextPage
-  }//end methods
-};
+    submit() {
+      this.$router.push('/main')
+    }
+  }
+}//export default
 </script>
+
