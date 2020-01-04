@@ -21,7 +21,12 @@ export default new Vuex.Store({
         g_confirmed: 0,
         // determine which conversion window is open
         startdate: new Date(),
-        enddate: new Date()
+        enddate: new Date(),
+        campaignTest: [
+            { id: "01",name: "Campaign 1", data: "cool beans"},
+            { id: "02",name: "Campaign 2", data: "cheezy cheese"},
+            { id: "03",name: "Campaign 3", data: "hey there"},
+          ]
     },
     mutations: {
         setRecipes(state, payload) {

@@ -40,6 +40,32 @@ export default new Router({
         component: () => import( /* webpackChunkName: "main" */ '@/views/MainView.vue')
     },
     {
+      path: '/users',
+      name: 'users',
+      component: () => import( '@/views/UsersView.vue')
+    },
+    {
+      path: '/campaigns',
+      name: 'campaigns',
+      component: () => import( '@/views/CampaignsView.vue')
+    },
+    {
+      path: '/reports',
+      name: 'reports',
+      component: () => import( '@/views/ReportsView.vue')
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import( '@/views/AdminView.vue')
+    },
+    {
+      path: '/campaign/:id',
+      name: 'campaign',
+      params: true,
+      component: () => import( '@/views/CampaignView.vue')
+    },
+    {
         path: '/facebook',
         name: 'facebook',
         component: () => import('./views/FacebookReport.vue')

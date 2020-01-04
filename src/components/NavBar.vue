@@ -3,7 +3,7 @@
       <v-toolbar dark class="blue">
         <v-icon class="hidden-md-and-up mr-5" @click="drawer=!drawer">menu</v-icon>
             <router-link to="/">
-                <v-toolbar-title data-cy="titleBtn">B+C Conversions</v-toolbar-title>
+                <v-toolbar-title data-cy="titleBtn">B+C Conversion Matrix</v-toolbar-title>
             </router-link>
         <v-spacer></v-spacer>
         <v-btn color="black" to="/page1" data-cy="menuBtn" class="hidden-sm-and-down">

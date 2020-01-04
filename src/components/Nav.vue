@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="rigntnav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/main">Main</router-link>
+      <router-link to="/main">Main</router-link> |
+      <router-link to="/">Log out</router-link>
     </div>
     <div class="leftnav">
     <!--  <router-link to="/users">Users/Agents</router-link><br/> -->
