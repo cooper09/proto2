@@ -7,9 +7,7 @@
         </div>
     </div>
     <br/><br/>
-
-  <br/><br/>
-
+    <button @click="newCampaign()">New Campaign</button>
   </div>
 </template>
 <script>
@@ -26,6 +24,9 @@ export default {
            console.log("select your campaign: ", id );
            this.$router.push('/campaign/'+id );
        },
+       newCampaign() {
+           alert("Time to make the donuts...")
+       }
    } //end methods
 }//end export 
 </script>

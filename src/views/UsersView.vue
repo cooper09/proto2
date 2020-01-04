@@ -1,6 +1,6 @@
 <template>
   <div class="stinky">
-    <h1>This is the Users page</h1>
+    <h1>This is the Users view</h1>
     <Nav />
     <Users />
   </div>

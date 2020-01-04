@@ -1,6 +1,6 @@
 <template>
   <div class="stinky">
-    <h1>This is the Campaigns page</h1>
+    <h1>This is the Campaigns view</h1>
     <Nav />
     <Campaigns />
   </div>
