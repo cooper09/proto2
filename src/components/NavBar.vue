@@ -1,12 +1,12 @@
 <template>
     <nav>
-      <v-toolbar dark class="blue">
-        <v-icon class="hidden-md-and-up mr-5" @click="drawer=!drawer">menu</v-icon>
+      <v-toolbar class="blue-grey darken-4">
+        <v-icon class="hidden-md-and-up mr-5 white--text" @click="drawer=!drawer">menu</v-icon>
             <router-link to="/">
                 <v-toolbar-title data-cy="titleBtn">B+C Conversion Matrix</v-toolbar-title>
             </router-link>
         <v-spacer></v-spacer>
-        <v-btn color="black" to="/page1" data-cy="menuBtn" class="hidden-sm-and-down">
+        <v-btn color="blue-grey lighten-4" to="/page1" data-cy="menuBtn" class="hidden-sm-and-down">
             <span>Menu</span>
             <v-icon right></v-icon>
         </v-btn>
