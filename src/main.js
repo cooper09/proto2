@@ -6,7 +6,11 @@ import vuetify from './plugins/vuetify';
 // Charts
 import 'chart.js'
 import 'hchs-vue-charts'
+import {ServerTable, ClientTable, Event} from 'vue-tables-2';
 
+Vue.use(ClientTable, {
+  perPage: 3
+}, false);
 
 Vue.config.productionTip = false
 
