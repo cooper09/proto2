@@ -26,11 +26,12 @@ export default new Vuex.Store({
             { id: "01",name: "Campaign 1", data: "cool beans"},
             { id: "02",name: "Campaign 2", data: "cheezy cheese"},
             { id: "03",name: "Campaign 3", data: "hey there"},
-          ]
+          ], 
+        campaignId: "00"   
     },
     mutations: {
-        setRecipes(state, payload) {
-            state.recipes = payload;
+        setCampaignId(state, payload) {
+            state.campaignId = payload;
         },
         setUser(state, payload) {
             state.user = payload;
@@ -164,6 +165,10 @@ export default new Vuex.Store({
         setStartDate({state}, date) {
             //alert('Store - Set Date: '+ date )
             state.startdate = date;
+        },
+        setCampaignId({ commit }, id ) {
+            alert("Update Campaign ID: " +  id);
+            commit('setCampaignId', id);
         }
     }, //end actions
     getters: {

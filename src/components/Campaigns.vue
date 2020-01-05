@@ -21,8 +21,9 @@ export default {
     },
     methods: {
        showCampaign(id){
-           console.log("select your campaign: ", id );
-           this.$router.push('/campaign/'+id );
+        console.log("select your campaign: ", id );
+        this.$router.push('/campaign/'+id );
+        this.$store.dispatch('setCampaignId', id )
        },
        newCampaign() {
         console.log("Create new campaign...");

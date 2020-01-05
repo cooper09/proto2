@@ -2,7 +2,8 @@
   <div class="stinky">
     <h1>This is the Reports view</h1>
     <Nav />
-    <Report id="02" />
+    campaign ID: {{campaignId}}
+    <Report :id="campaignId" />
   </div>
 </template>
 <script>
@@ -14,5 +15,13 @@ export default {
       Nav, 
       Report
   },
+/*  campaign() {
+    return this.$store.state.campaignTest.find(campaign => campaign.id == this.cid  )
+  }, */
+  computed: {
+  campaignId() {
+    return this.$store.state.campaignId
+    }// end campaignId
+  }//end computed
 }//end export default
 </script>

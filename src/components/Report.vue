@@ -1,9 +1,9 @@
 <template>
     <div class="home">
     <h3>Report </h3>
-        campaign id:     {{id}}<br/>
+ <!--       campaign id:     {{id}}<br/>
         {{campaign.name}}<br/>
-        {{campaign.data }}
+        {{campaign.data }} -->
         <br/><br/>
             Start Date: <input type="date" name="start">
             <input type="submit" class="btn">
