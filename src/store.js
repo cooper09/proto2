@@ -167,7 +167,7 @@ export default new Vuex.Store({
             state.startdate = date;
         },
         setCampaignId({ commit }, id ) {
-            alert("Update Campaign ID: " +  id);
+            //alert("Update Campaign ID: " +  id);
             commit('setCampaignId', id);
         }
     }, //end actions

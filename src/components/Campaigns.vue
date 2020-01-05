@@ -2,7 +2,7 @@
     <div class="home">
     <h3>Campaigns</h3>
     <div class="container">
-        <div v-for="campaign in campaigns" :key="campaign.id" @click=showCampaign(campaign.id)>
+        <div v-for="campaign in campaigns" :key="campaign.id" @click=showCampaign(campaign.id) class="cursor">
         campaign: {{campaign.name}}
         </div>
     </div>
@@ -32,3 +32,8 @@ export default {
    } //end methods
 }//end export 
 </script>
+<style scope>
+    .cursor {
+        cursor: pointer;
+    }
+</style>
