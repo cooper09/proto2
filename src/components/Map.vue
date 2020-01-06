@@ -1,92 +1,77 @@
 <template>
   <div class="about">
     <h1>This is the Map component</h1>
+        <div>
+        <h2>Search and add a pin</h2>
+        <label>
+          <gmap-autocomplete
+            @place_changed="setPlace">
+          </gmap-autocomplete>
+          <button @click="addMarker">Add</button>
+        </label>
+        <br/>
+      </div>
+      <br>
+      <gmap-map
+        :center="center"
+        :zoom="12"
+        style="width:100%;  height: 400px;"
+      >
+        <gmap-marker
+          :key="index"
+          v-for="(m, index) in markers"
+          :position="m.position"
+          @click="center=m.position"
+        ></gmap-marker>
+      </gmap-map>
   </div>
 </template>
 <script>
 
-import MarkerClusterer from '@google/markerclusterer';
-import gmapsInit from '@/helpers/gmaps';
-
-const locations = [
-  {
-    position: {
-      lat: 48.160910,
-      lng: 16.383330,
-    },
-  },
-  {
-    position: {
-      lat: 48.174270,
-      lng: 16.329620,
-    },
-  },
-  {
-    position: {
-      lat: 48.146140,
-      lng: 16.297030,
-    },
-  },
-  {
-    position: {
-      lat: 48.135830,
-      lng: 16.194460,
-    },
-  },
-  {
-    position: {
-      lat: 48.306091,
-      lng: 14.286440,
-    },
-  },
-  {
-    position: {
-      lat: 47.503040,
-      lng: 9.747070,
-    },
-  },
-];
 
 export default {
   name: `Map`,
   async mounted() {
 
     console.log("map me, baby")
- try {
-     const google = await gmapsInit();
-      const geocoder = new google.maps.Geocoder();
-      const map = new google.maps.Map(this.$el);
+    this.geolocate();
 
-  /*    geocoder.geocode({ address: `Austria` }, (results, status) => {
-        if (status !== `OK` || !results[0]) {
-          throw new Error(status);
-        }
-
-        map.setCenter(results[0].geometry.location);
-        map.fitBounds(results[0].geometry.viewport);
-      });
-
-      const markerClickHandler = (marker) => {
-        map.setZoom(13);
-        map.setCenter(marker.getPosition());
-      };
-
-      const markers = locations
-        .map((location) => {
-          const marker = new google.maps.Marker({ ...location, map });
-          marker.addListener(`click`, () => markerClickHandler(marker));
-
-          return marker;
-        }); */
-
-      // eslint-disable-next-line no-new
-      new MarkerClusterer(map, markers, {
-        imagePath: `https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m`,
-      });
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-    } //end try/catch
   },//end mounted
+    data() {
+      return {
+        // default to Montreal to keep it simple
+        // change this to whatever makes sense
+        center: { lat: 45.508, lng: -73.587 },
+        markers: [],
+        places: [],
+        currentPlace: null
+      };
+  },
+    methods: {
+    // receives a place object via the autocomplete component
+    setPlace(place) {
+      this.currentPlace = place;
+    },
+    addMarker() {
+      if (this.currentPlace) {
+        const marker = {
+          lat: this.currentPlace.geometry.location.lat(),
+          lng: this.currentPlace.geometry.location.lng()
+        };
+        this.markers.push({ position: marker });
+        this.places.push(this.currentPlace);
+        this.center = marker;
+        this.currentPlace = null;
+      }
+    },
+    geolocate: function() {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+      });
+    }
+  }
 }//end export default
 </script>

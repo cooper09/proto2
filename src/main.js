@@ -7,14 +7,23 @@ import vuetify from './plugins/vuetify';
 import 'chart.js'
 import 'hchs-vue-charts'
 import {ServerTable, ClientTable, Event} from 'vue-tables-2';
-
-Vue.use(ClientTable, {
-  perPage: 3
-}, false);
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.config.productionTip = false
 
+//use Vuetify DataTables
+Vue.use(ClientTable, {
+  perPage: 3
+}, false);
+//Vue Charts.js
 Vue.use(window.VueCharts);
+// Vue GoogleMaps
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyAYzBB0nQXLqSSu2pgpCEcbWys39KG9Stk",
+    libraries: "places" // necessary for places input
+  }
+});
 
 new Vue({
   router,
