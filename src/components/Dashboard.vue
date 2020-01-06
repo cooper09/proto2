@@ -4,6 +4,7 @@
         All kinds of cool graphic stuff goes here: {{campaignid}}
         <Chart />
         <Data />
+        Map Me
         <Map />
     </div>
 
